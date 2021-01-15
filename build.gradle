@@ -19,7 +19,9 @@ subprojects { Project subproject ->
     apply plugin: "io.micronaut.build.publishing"
 
     dependencies {
-        implementation(platform("com.oracle.coherence.ce:coherence-bom:${coherenceVersion}"))
+        compileOnly(platform("com.oracle.coherence.ce:coherence-bom:${coherenceVersion}"))
+        testImplementation(platform("com.oracle.coherence.ce:coherence-bom:${coherenceVersion}"))
+        testImplementation "com.oracle.coherence.ce:coherence:${coherenceVersion}"
     }
 }
 
